@@ -4,7 +4,7 @@ SUPERSET_VERSION := $(shell grep apache-superset Pipfile | grep -Eo '[0-9.]+')
 
 build: requirements-dev.txt
 	docker buildx build \
-	--platform linux/amd64 \
+	--platform linux/arm64 \
 	--tag $(REPO) \
 	--tag $(REPO):$(SUPERSET_VERSION) \
 	.
